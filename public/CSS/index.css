@@ -1,0 +1,126 @@
+body{
+    background-color: #d9d9d9;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    width: 100%; 
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title{
+    font-family: 'Anton', sans-serif;
+    font-size: 300%;
+    color: #023e8a;
+    letter-spacing: 0.3rem;
+    margin-bottom: 0;
+}
+
+.decription{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.footer{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    justify-content: center;
+    background-color: white;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 400px;
+    height: 310px;
+    border-color: #eeeaea96;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.forgotLink, .forgot{
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #5c9edb;
+}
+
+.forgotLink:hover{
+    text-decoration: underline;  
+}
+
+#Password, #Username{
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10px;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding: 4px 0 4px 10px;
+    font-size: 20px;
+    border-color: #d9d9d9;
+    border-style: solid;
+    
+}
+
+#Password:focus, #Username:focus{
+    outline: none;
+    border-color: #0077b6;
+}
+
+.btnlgn{
+    font-family: 'Oswald', sans-serif;
+    background-color: #0077b6;
+    color: white;
+    margin-top: 10px;
+    width: 315px;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 20px;
+}
+
+.btnlgn:focus, .btnsgn:focus{
+    outline: none;
+    border-color: #d1df10;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.btnsgn:hover, .btnlgn:hover{
+    cursor: pointer;
+}
+
+.btnsgn{
+    width: 150px;
+    height: 40px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #2b9348;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 20px;
+}
+
+.outsgn{
+    display: flex;
+    justify-content: center;
+}
+
+
+
