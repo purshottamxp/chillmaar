@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Ranchers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <title>ChillMaar - Welcome to ChillMaar</title>
+    <title>ChillMaar - log in or sign up</title>
 </head>
 
 <body>
@@ -20,60 +20,31 @@
             <h2 class="decription">Helps you connect and share with the people in your life.</h2>
         </div>
 
-        <main class="login">
-            <form>
-                <div class="username">
-                <input type="text" id="Username" placeholder="Username">
+        <main class="formContainer">
+            <form action="/signin" method="POST">
+                <div class="usernameContainer">
+                <input type="text" id="Username" placeholder="Username" name="username" required>
                 </div>
-                <div class="password">
-                <input type="password" id="Password" placeholder="Password">
+                <div class="passwordContainer">
+                <input type="password" id="Password" placeholder="Password" name="password" required>
                 </div>
-                <button class="btnlgn">Log In</button>
-                <div class="forgot">
+                <button type="submit" class="btnlgn">Log In</button>
+                <div class="forgotContainer">
                 <a href="" class="forgotLink">Forgot Password ?</a>
                 </div>
                 <hr>
-                <div class="outsgn">
-                <button class="btnsgn">Sign Up</button>
-                </div>
             </form>
+            <div class="sgnUpContainer">
+                <a href="/signup" class="a_sgn">Sign Up</a>
+            </div>
         </main> 
 
-        <!-- <section class="signup">
-            <h2>Signup</h2>
-            <form>
-                <label for="Username">Username</label>
-                <input type="text" id="Username">
-
-                <label for="Fname">FirstName</label>
-                <input type="text" id="Fname">
-
-                <label for="Lname">LastName</label>
-                <input type="text" id="Lname">
-
-                <label for="sex">Gender</label>
-                <select>
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
-
-                <label for="Email">Email</label>
-                <input type="text" id="Email">
-
-                <label for="Phone">Phone</label>
-                <input type="text" id="Phone">
-
-                <button>Signup</button>
-            </form>
-        </section> -->
-
-       
+        <footer class="footerContainer">
+            <p class="footer">Copyright &#169; 2021 ChillMaar. All rights reserved.</p>
+        </footer>
     </div>
 
-    <footer class="footer">
-        <p>Copyright &#169; 2021 ChillMaar. All rights reserved.</p>
-    </footer>
-
+    
 </body>
 
 </html>

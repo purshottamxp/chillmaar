@@ -2,16 +2,25 @@ body{
     background-color: #d9d9d9;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+.footerContainer{
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: white;   
 }
 
 .container{
     display: flex;
-    width: 100%; 
-    flex-direction: row;
-    position: fixed;
     justify-content: space-around;
+    height: 100vh;
+    width: 100%;
     align-items: center;
-    min-height: 100vh;
+    position: fixed;
 }
 
 .title{
@@ -26,18 +35,10 @@ body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.footer{
+.formContainer{
     display: flex;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    justify-content: center;
-    background-color: white;
-}
-
-.login{
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     width: 400px;
     height: 310px;
@@ -46,22 +47,30 @@ body{
     border-radius: 10px;
 }
 
-.forgotLink, .forgot{
+.formContainerSgn{
+    background-color: white;
+    width: 400px;
+    height: 320px;
+    border-color: #eeeaea96;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.usernameContainer, .passwordContainer, .fname, .lname{
     font-family: 'Roboto Condensed', sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outsgnContainer{
     display: flex;
     justify-content: center;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    font-size: 18px;
-    text-decoration: none;
-    color: #5c9edb;
 }
 
-.forgotLink:hover{
-    text-decoration: underline;  
-}
-
-#Password, #Username{
+#Password, #Username, #firstName, #lastName{
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 10px;
     width: 300px;
@@ -71,11 +80,10 @@ body{
     padding: 4px 0 4px 10px;
     font-size: 20px;
     border-color: #d9d9d9;
-    border-style: solid;
-    
+    border-style: solid; 
 }
 
-#Password:focus, #Username:focus{
+#Password:focus, #Username:focus, #firstName:focus, #lastName:focus{
     outline: none;
     border-color: #0077b6;
 }
@@ -91,20 +99,51 @@ body{
     border-radius: 10px;
     border-style: none;
     font-size: 20px;
+}   
+
+.btnsgn{
+    font-family: 'Oswald', sans-serif;
+    background-color: #2b9348;
+    color: white;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 20px;
 }
 
-.btnlgn:focus, .btnsgn:focus{
+.a_sgn:hover, .btnlgn:hover, .btnsgn:hover{
+    cursor: pointer;
+}
+
+.btnlgn:focus, .a_sgn:focus, .btnsgn:focus{
     outline: none;
     border-color: #d1df10;
     border-width: 2px;
     border-style: solid;
 }
 
-.btnsgn:hover, .btnlgn:hover{
-    cursor: pointer;
+.forgotLink:hover{
+    text-decoration: underline;  
 }
 
-.btnsgn{
+.forgotLink{
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #5c9edb;
+}
+
+.a_sgn{
+    display: flex;
+    justify-content: center;
     width: 150px;
     height: 40px;
     font-family: 'Oswald', sans-serif;
@@ -115,12 +154,7 @@ body{
     border-radius: 10px;
     border-style: none;
     font-size: 20px;
+    text-decoration: none;
 }
-
-.outsgn{
-    display: flex;
-    justify-content: center;
-}
-
 
 
