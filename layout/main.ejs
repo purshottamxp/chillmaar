@@ -74,9 +74,9 @@
                                 <% let find=null; if(msg.liked.length>0){
                                     find = msg.liked.find(f => { return f.id === user.id}) };
                                     %>
-                                    <button class="likes" type="submit" <%if (!find || find===null) { %>
-
-                                        <% } else {%> disabled <% } %>>
+                                    <button type="submit" <%if (!find) { %>
+                                        class="likes"
+                                        <% } else {%> class="liked" disabled <% } %>>
                                     </button>
                             </form>
                         </li>
@@ -109,10 +109,9 @@
                                                 <% let finds=null; if(msg.liked.length>0){
                                                     finds = msg.liked.find(f => { return f.id === user.id}) };
                                                     %>
-                                                    <button class="likes" type="submit" <%if (!finds || finds===null) {
-                                                        %>
-
-                                                        <% } else {%> disabled <% } %>>
+                                                    <button type="submit" <%if (!finds) { %>
+                                                        class="likes"
+                                                        <% } else {%> class="liked" disabled <% } %>>
                                                     </button>
                                             </form>
 

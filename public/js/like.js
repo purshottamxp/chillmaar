@@ -8,21 +8,16 @@ for (let each of like) {
         real.append("id", val);
 
         fetch('/likes', {
-            method: 'post',
+            method: 'put',
             body: real
         }).then(res => {
-
+            return res.json();
+        }).then(response => {
+    
         })
         const count = each.getElementsByClassName('counts');
         count[0].innerText = parseInt(count[0].innerText) + 1;
         each.querySelector('.likes').setAttribute('disabled', "");
-
-        fetch('/likes', {
-            method: 'get'
-
-        }).then(res => {
-
-        })
         const liked = each.querySelector('.likes');
         if(liked.getAttribute('disabled') === ""){
             liked.classList.remove('likes');
