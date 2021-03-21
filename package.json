@@ -1,5 +1,5 @@
 {
-  "name": "ChillMaar",
+  "name": "chillmaar",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.0",

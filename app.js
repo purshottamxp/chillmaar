@@ -52,8 +52,8 @@ const sessionOption = {
     }
 };
 app.use(session(sessionOption));
-
-app.listen(3000, ()=>{console.log("Server is UP!")});
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{console.log(`Server is UP on PORT - ${port}`)});
 
 app.set('views', path.join(__dirname,'/Layout'));
 app.set('view engine', 'ejs');
