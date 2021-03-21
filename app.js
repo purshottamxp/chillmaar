@@ -18,9 +18,9 @@ const override = require('method-override');
 const flash = require('connect-flash');
 const MongoDBStore = require('connect-mongo');
 const app = express();
-const helmet = require('helmet');
 const secret = process.env.cSecret || 'kendnaal';
 const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/chillmaar';
+ 
 // Mongoose Connections Params
 mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -58,7 +58,6 @@ app.listen(3000, ()=>{console.log("Server is UP!")});
 app.set('views', path.join(__dirname,'/Layout'));
 app.set('view engine', 'ejs');
 
-app.use(helmet());
 app.use(flash());
 app.use(override('_method'));
 app.use(express.urlencoded({extended:true}));
