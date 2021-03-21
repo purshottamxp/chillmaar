@@ -4,11 +4,19 @@ const User = require('../model/user');
 const bcrypt = require('bcrypt');
 
 router.post('/', async(rq,rs)=>{
-    const {username, password} = rq.body;
-    const user = await User.findOne({username});
-    const result = await bcrypt.compare(password, user.password);
-    if(result){
-        rq.session.username = user.username;
+    try{
+        const {username, password} = rq.body;
+        const user = await User.findOne({username});
+            const result = await bcrypt.compare(password, user.password);
+            if(result){
+                rq.session.username = user.username;
+                rq.session._id = user.id;
+                rq.session.fname = user.firstName;
+                rq.session.lname = user.lastName;
+                rs.redirect('/');
+            }
+    }catch(e){
+        rq.flash('error','Username or password is incorrect');
         rs.redirect('/');
     }
 });

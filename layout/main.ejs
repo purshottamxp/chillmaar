@@ -1,23 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChillMaar - Welcome to ChillMaar</title>
+    <script src="js/like.js" defer></script>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Ranchers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Ranchers&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>
+        <%=fname%>
+            <%=lname%> - Welcome to ChillMaar
+    </title>
 </head>
-<body>
-    <img src="http://sad">
-    <label>username</label>
 
-    <form action="">
-    <textarea id="story" name="story"
-          rows="5" cols="33">
-        </textarea>
-    <button type="submit">Post</button>
-    </form>
+<body class="mainBody">
+    <div class="nav">
+        <label class="mainTitle">ChillMaar</label>
+        <form class="signoutForm" action="/signout" method="POST">
+            <button class="sbtn" type="submit">Sign Out</button>
+        </form>
 
-    <label>Friends</label>
+    </div>
+    <main class="mainPage">
+        <div class="profile">
+            <form action="/upload?_method=PUT" method="POST" enctype="multipart/form-data">
+                <img class="profilePic" src="<%= user.pic%>">
+                <label class="profileName">
+                    <%=fname%>
+                        <%=lname%>
+                </label>
+                <label class="lupload" for="upload">Upload Photo</label>
+                <input type="file" name="image" id="upload" class="upload" style="visibility: hidden;">
+                <button type="submit" class="supload" style="display: none;">Upload</button>
+            </form>
+        </div>
+        <div class="mainForm">
+
+            <form class="divForm" action="/post" method="POST">
+                <div class="insideDiv">
+                    <textarea id="story" name="story" rows="5" cols="30" placeholder="What's on your mind ?"></textarea>
+                    <button class="mainSubmit" type="submit">Post</button>
+                </div>
+            </form>
+            <div class="ul">
+                <ul>
+                    <% for(let msg of user.posts){ %>
+
+                        <li class="list">
+                            <div class="fullName">
+                                <%= msg.fullname %>
+                            </div>
+                            
+                            <div class="date">
+                                <%= msg.date %>
+                            </div>
+                            
+                            <div class="story">
+                                <%= msg.story %>
+                            </div>
+                        
+                            <form class="flikes" id="submitForm">
+                                <label class="counts" id="counts">
+                                    <%= msg.likes %>
+                                </label>
+                                <input type="text" name="id" value="<%= msg._id %>" style="display: none;">
+                                <% let find=null; if(msg.liked.length>0){
+                                    find = msg.liked.find(f => { return f.id === user.id}) };
+                                    %>
+                                    <button class="likes" type="submit" <%if (!find || find===null) { %>
+
+                                        <% } else {%> disabled <% } %>>
+                                    </button>
+                            </form>
+                        </li>
+
+                        <% } %>
+                            <% const postLists=[]; if(user.friends.length>0)
+                                {
+                                user.friends.forEach( e => { e.posts.forEach(f => {postLists.push(f);})});
+                                }
+                            %>
+                                <% if(postLists.length>0){ %>
+                                    <% for(let msg of postLists){ %>
+
+                                        <li class="list">
+                                            <div class="fullName">
+                                                <%= msg.fullname %>
+                                            </div>
+                                            <div class="date">
+                                                <%= msg.date %>
+                                            </div>
+                                            <div class="story">
+                                                <%= msg.story %>
+                                            </div>
+                                            <form class="flikes" id="submitForm">
+                                                <label class="counts" id="counts">
+                                                    <%= msg.likes %>
+                                                </label>
+                                                <input type="text" name="id" value="<%= msg._id %>"
+                                                    style="display: none;">
+                                                <% let finds=null; if(msg.liked.length>0){
+                                                    finds = msg.liked.find(f => { return f.id === user.id}) };
+                                                    %>
+                                                    <button class="likes" type="submit" <%if (!finds || finds===null) {
+                                                        %>
+
+                                                        <% } else {%> disabled <% } %>>
+                                                    </button>
+                                            </form>
+
+                                        </li>
+
+                                        <% } %>
+                                 <% } %>
+                </ul>
+            </div>
+
+        </div>
+        <div class="mainFriend">
+            <label class="friendTitle">Friends</label>
+            <form action="/find" class="find" id="find">
+                <input type="text" id="frnd" name="username" placeholder="Search Your Friend's">
+            </form>
+            <form action="/add" class="cForm" hidden>
+                <label class="cLabel"></label>
+                <input type="text" class="cInput" name="id" hidden>
+                <input type="submit" class="cSubmit" value="Follow">
+                <hr>
+            </form>
+            <div class="friends">
+            <% for(let f of user.friends) {%>
+            <ul>
+                <li class="frndsList"><%= f.firstName + " " + f.lastName %></li>
+            </ul>
+            <% } %>
+            </div>
+        </div>
+    </main>
 
 </body>
+
 </html>

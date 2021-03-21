@@ -1,20 +1,282 @@
-body{
+body {
     background-color: #d9d9d9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.mainBody {
+    background-color: #f0f2f5;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.footerContainer{
+ul{
+    padding: 0;
+}
+
+.ul{
+    padding: 0 5% 0 5%;
+    position: relative;
+    top: 10px;
+
+}
+
+.list{
+    background-color: white;
+    list-style: none;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.mainPage {
+    display: flex;
+    height: auto;
+    max-width: 100%;
+    justify-content: space-between;
+    background-color: #f0f2f5;
+    padding: 0 5% 10px 5%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 5% 10px 5%;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.fullName{
+    font-family: 'Anton', sans-serif;
+    font-size: 110%;
+    color: #023e8a;
+}
+
+div .mainTitle {
+    font-family: 'Anton', sans-serif;
+    font-size: 200%;
+    color: #023e8a;
+    letter-spacing: 0.3rem;
+    margin-bottom: 0;
+}
+
+/* .signoutForm{
+    display: flex;
+    position: fixed;
+} */
+
+
+.profile {
+    align-self: flex-start;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 5%;
+    right: 80%;   
+}
+
+.mainForm {
+    position: absolute;
+    top: 70px;
+    right: 25%;
+    left: 25%;
+    height: 90%;
+    overflow-y:scroll;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    background-color: #ffadad;
+}
+
+.success{
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    background-color: #2a9d8f;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+
+.divForm {
+    padding: 0 5% 0 5%;
+    position: relative;
+    top: 0;
+}
+
+.insideDiv {
+    background-color: white;
+    overflow: hidden;
+}
+
+.mainSubmit {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #023e8a;
+    border: none;
+    outline: none;
+    width: 50px;
+    float: right;
+}
+
+textarea {
+    font-family: 'Questrial', sans-serif;
+    display: block;
+    border: none;
+    overflow: auto;
+    overflow: hidden;
+    background-color: white;
+    resize: none;
+    outline: none;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.mainFriend {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+    position: fixed;
+    border-style: solid;
+    border-top: none;
+    border-color: #cccccc;
+    top: 70px;
+    right: 5%;
+    left: 80%;
+}
+
+.friendTitle{
+    font-family: 'Anton', sans-serif;
+    font-size: 100%;
+    background-color: #023e8a;
+    padding-left: 5px;
+    color: white;
+}
+
+.cSubmit{
+    font-family: 'Anton', sans-serif;
+    font-size: 80%;
+    color: white;
+    border: none;
+    background-color: #2b9348; 
+}
+
+.cLabel{
+    font-family: 'Anton', sans-serif;
+    font-size: 100%;
+
+    
+}
+
+.frndsList{
+    font-family: 'Anton', sans-serif;
+    font-size: 100%;
+    color: #050505;
+    list-style: none;
+}
+
+.profilePic {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.lupload{
+    color: #73d2de;
+}
+
+.lupload , .supload{
+    position:absolute;
+    width: 100%;
+    top: 305px;
+}
+
+.supload{
+    top: 150px;
+}
+
+.profilePic, .lupload, .supload{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.date{
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #050505;
+}
+
+.story{
+    margin-bottom: 10px;
+    font-family: 'Questrial', sans-serif;
+    padding: 0 0 10px 0;
+    font-size: 20px;
+    color: #050505;
+    border-width: 2px;
+    border-style:solid;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-color: #cccccc;
+}
+
+.profileName {
+    display: flex;
+    margin-bottom: 5px;
+    position: relative;
+    top: 320px;
+    color: #050505  ;
+    font-family: 'Anton', sans-serif;
+    font-size: 200%;
+    justify-content: center;
+}
+
+.signoutForm button {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #dc2f02;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 20px;
+    outline: none;
+}
+
+.footerContainer {
     bottom: 0;
     position: fixed;
     display: flex;
     width: 100%;
     justify-content: center;
-    background-color: white;   
+    background-color: white;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-around;
     height: 100vh;
@@ -23,7 +285,7 @@ body{
     position: fixed;
 }
 
-.title{
+.title {
     font-family: 'Anton', sans-serif;
     font-size: 300%;
     color: #023e8a;
@@ -31,32 +293,64 @@ body{
     margin-bottom: 0;
 }
 
-.decription{
+.decription {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.formContainer{
+.formContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
     width: 400px;
-    height: 310px;
+    height: auto;
     border-color: #eeeaea96;
     border-style: solid;
     border-radius: 10px;
 }
 
-.formContainerSgn{
+.formContainerSgn {
     background-color: white;
     width: 400px;
-    height: 320px;
+    height: auto;
     border-color: #eeeaea96;
     border-style: solid;
     border-radius: 10px;
 }
 
-.usernameContainer, .passwordContainer, .fname, .lname{
+#frnd{
+    display: flex;
+    width: 100%;
+}
+
+#find{
+    display: flex;
+    width: 100%;
+}
+
+.counts{
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    color: #5a585896;
+}
+
+.likes{
+    background-image: url('https://res.cloudinary.com/purshottamxp/image/upload/v1616336113/like_vgppjj.png');
+    background-size: cover;
+    border: none;
+    width: 20px;
+    height: 20px;    
+}
+
+.liked{
+    background-image: url('https://res.cloudinary.com/purshottamxp/image/upload/v1616336113/liked_dfjhst.png');
+    background-size: cover;
+    border: none;
+    width: 20px;
+    height: 20px;    
+}
+
+.usernameContainer, .passwordContainer, .fname, .lname {
     font-family: 'Roboto Condensed', sans-serif;
     margin-left: 5px;
     margin-right: 5px;
@@ -65,12 +359,12 @@ body{
     align-items: center;
 }
 
-.outsgnContainer{
+.outsgnContainer {
     display: flex;
     justify-content: center;
 }
 
-#Password, #Username, #firstName, #lastName{
+#Password, #Username, #firstName, #lastName {
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 10px;
     width: 300px;
@@ -80,15 +374,15 @@ body{
     padding: 4px 0 4px 10px;
     font-size: 20px;
     border-color: #d9d9d9;
-    border-style: solid; 
+    border-style: solid;
 }
 
-#Password:focus, #Username:focus, #firstName:focus, #lastName:focus{
+#Password:focus, #Username:focus, #firstName:focus, #lastName:focus {
     outline: none;
     border-color: #0077b6;
 }
 
-.btnlgn{
+.btnlgn {
     font-family: 'Oswald', sans-serif;
     background-color: #0077b6;
     color: white;
@@ -99,9 +393,9 @@ body{
     border-radius: 10px;
     border-style: none;
     font-size: 20px;
-}   
+}
 
-.btnsgn{
+.btnsgn {
     font-family: 'Oswald', sans-serif;
     background-color: #2b9348;
     color: white;
@@ -114,25 +408,25 @@ body{
     font-size: 20px;
 }
 
-.a_sgn:hover, .btnlgn:hover, .btnsgn:hover{
+.a_sgn:hover, .btnlgn:hover, .btnsgn:hover, .likes, .mainSubmit, .supload, .signoutForm button {
     cursor: pointer;
 }
 
-.btnlgn:focus, .a_sgn:focus, .btnsgn:focus{
+.btnlgn:focus, .a_sgn:focus, .btnsgn:focus {
     outline: none;
     border-color: #d1df10;
     border-width: 2px;
     border-style: solid;
 }
 
-.forgotLink:hover{
-    text-decoration: underline;  
+.forgotLink:hover, .lupload:hover {
+    text-decoration: underline;
 }
 
-.forgotLink{
+.forgotLink {
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     margin-top: 4px;
     margin-bottom: 4px;
@@ -141,7 +435,7 @@ body{
     color: #5c9edb;
 }
 
-.a_sgn{
+.a_sgn {
     display: flex;
     justify-content: center;
     width: 150px;
@@ -156,5 +450,3 @@ body{
     font-size: 20px;
     text-decoration: none;
 }
-
-
