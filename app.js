@@ -55,7 +55,7 @@ app.use(session(sessionOption));
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{console.log(`Server is UP on PORT - ${port}`)});
 
-app.set('views', path.join(__dirname,'/Layout'));
+app.set('views', path.join(__dirname,'/layout'));
 app.set('view engine', 'ejs');
 
 app.use(flash());
